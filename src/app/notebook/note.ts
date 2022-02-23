@@ -1,5 +1,5 @@
 export interface Note {
-    label: string;
-    noteText: string;
-    bgClass: string;
+  label: string;
+  noteText: string;
+  bgClass: string;
 }

@@ -1,17 +1,19 @@
-<div [ngClass]="getBackgroundClass()">
-    Web Notebook Page {{ currentPage }}
+<div class="notebook">
+    <p>Enter your notes below.</p>
 
-    <form class="notepage-form">
-        <mat-form-field appearance="fill" class="note-field">
-            <mat-label>Enter something inspirational...</mat-label>
-            <textarea matInput rows="30"></textarea>
+    <span>Page {{ currentNote.label }} of {{ notes.length }}</span>
+    <form [ngClass]="getBackgroundClass()">
+        <mat-form-field appearance="standard" class="note-field">
+            <mat-label>Write something inspirational...</mat-label>
+            <textarea matInput rows="30" [formControl]="noteField" id="noteText"></textarea>
         </mat-form-field>
     </form>
 
     <div class="paginator">
-        <a *ngIf="hasPrevPage()" title="Previous" [routerLink]="['/note', getPrevPageNum()]">
+        <a *ngIf="hasPrevPage()" title="Previous page" [routerLink]="['/note', getPrevPageIndex()]">
             <mat-icon>arrow_backward</mat-icon>
-        </a><a *ngIf="hasNextPage()" title="Next" [routerLink]="['/note', getNextPageNum()]">
+        </a>
+        <a *ngIf="hasNextPage()" title="Next page" [routerLink]="['/note', getNextPageIndex()]">
             <mat-icon>arrow_forward</mat-icon>
         </a>
     </div>
