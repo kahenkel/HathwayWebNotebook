@@ -1,4 +1,4 @@
-# HathwayWebNotebook
+# Hathway Web Notebook
 
 A web app for an online notebook of up to 5 pages.
 
